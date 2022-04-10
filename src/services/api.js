@@ -12,7 +12,7 @@ export const createSession = async (email, password) => {
   const token = "dfhfghfgjfgjtghj"
 
   let statusCode = 403;
-  if (email == user.email && password == 'secret') {
+  if (email === user.email && password === 'secret') {
     statusCode = 201;
   }
   
