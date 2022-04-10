@@ -6,11 +6,13 @@ import { getUsers } from '../../services/api';
 
 const HomePage = () => {
   const { logout } = useContext(AuthContext);
+
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
+      console.log('useEffect')
       const response = await getUsers();
       setUsers(response.data);
       setLoading(false);

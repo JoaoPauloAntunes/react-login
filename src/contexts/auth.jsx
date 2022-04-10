@@ -30,6 +30,10 @@ export const AuthProvider = ({ children }) => {
 
     const response = await createSession(email, password);
     console.log('login', response);
+    if (response.statusCode == 403) { 
+      alert('Usuário ou senha inválido!');
+      return;
+    }
 
     // api criar uma session
 

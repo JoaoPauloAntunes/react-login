@@ -5,15 +5,24 @@ export const api = axios.create({
 })
 
 export const createSession = async (email, password) => {
+  const user = {
+    id: "2sdrgdfh",
+    email: "teste1@teste.com",
+  }
+  const token = "dfhfghfgjfgjtghj"
+
+  let statusCode = 403;
+  if (email == user.email && password == 'secret') {
+    statusCode = 201;
+  }
+  
   // return api.post('sessions', { email, password });
   return {
     data: {
-      user: {
-        id: "2sdrgdfh",
-        email: "teste@teste.com",
-      },
-      token: "dfhfghfgjfgjtghj",
-    }
+      user,
+      token,
+    },
+    statusCode,
   }
 }
 
